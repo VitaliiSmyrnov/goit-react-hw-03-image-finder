@@ -5,7 +5,7 @@ import { animateScroll as scroll } from 'react-scroll';
 import { Searchbar, ImageGallery, Button, Loader, Message } from 'components';
 import { fetchGallery } from 'services/galleryApi';
 import ImageFindEmpty from 'assets/empty-collection-min.png';
-import ImageFindError from 'assets/something-wrong.jpg';
+import ImageFindError from 'assets/something-wrong1-min.png';
 import { Wrapper } from './App.styled';
 
 export class App extends Component {
@@ -34,7 +34,13 @@ export class App extends Component {
             status: 'resolved',
           }))
         )
-        .catch(error => this.setState({ error, status: 'rejected' }));
+        .catch(error =>
+          this.setState({
+            error:
+              'Oops, something went wrong. Please, reload the page to try again.',
+            status: 'rejected',
+          })
+        );
     }
   }
 
@@ -71,7 +77,7 @@ export class App extends Component {
         )}
 
         {status === 'rejected' && (
-          <Message text={error.message} image={ImageFindError} />
+          <Message text={error} image={ImageFindError} />
         )}
 
         <ToastContainer autoClose={3000} theme="colored" />
