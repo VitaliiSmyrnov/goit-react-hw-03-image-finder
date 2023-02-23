@@ -56,7 +56,7 @@ export class App extends Component {
     this.setState(prevState => ({
       page: prevState.page + 1,
     }));
-    scroll.scrollMore(450);
+    scroll.scrollMore(475);
   };
 
   render() {
