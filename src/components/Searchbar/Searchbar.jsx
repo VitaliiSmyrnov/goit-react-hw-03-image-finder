@@ -34,7 +34,7 @@ export class Searchbar extends Component {
       <StyledHeader>
         <form onSubmit={handleQuerySubmit}>
           <button type="submit">
-            <BsSearch size="25" />
+            <BsSearch size="20" />
             <span>Search</span>
           </button>
 

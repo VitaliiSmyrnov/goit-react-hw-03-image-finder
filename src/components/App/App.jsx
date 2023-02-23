@@ -43,11 +43,13 @@ export class App extends Component {
   }
 
   handleFormSubmit = name => {
-    this.setState({
-      query: name,
-      page: 1,
-      gallery: [],
-    });
+    if (this.state.query !== name) {
+      this.setState({
+        query: name,
+        page: 1,
+        gallery: [],
+      });
+    }
   };
 
   loadMore = () => {

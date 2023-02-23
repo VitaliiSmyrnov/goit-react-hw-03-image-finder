@@ -10,7 +10,7 @@ export const StyledHeader = styled.div`
   justify-content: center;
   align-items: center;
 
-  min-height: 64px;
+  min-height: 44px;
 
   padding-right: 24px;
   padding-left: 24px;
@@ -37,8 +37,8 @@ export const StyledHeader = styled.div`
 
   button {
     display: inline-block;
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
 
     border: 0;
 
