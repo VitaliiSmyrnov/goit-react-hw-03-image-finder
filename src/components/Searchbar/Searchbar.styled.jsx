@@ -14,8 +14,8 @@ export const StyledHeader = styled.div`
 
   padding-right: 24px;
   padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 
   color: #fff;
   background-color: #3f51b5;

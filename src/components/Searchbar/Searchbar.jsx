@@ -5,33 +5,34 @@ import { StyledHeader } from './Searchbar.styled';
 
 export class Searchbar extends Component {
   state = {
-    queryName: '',
+    query: '',
   };
 
-  handleQueryNameChange = event => {
+  handleQueryChange = event => {
     this.setState({
-      queryName: event.currentTarget.value.trim().toLowerCase(),
+      query: event.target.value.trim().toLowerCase(),
     });
   };
 
-  handleQueryNameSubmit = event => {
+  handleQuerySubmit = event => {
     event.preventDefault();
-    const { queryName } = this.state;
+    const { query } = this.state;
 
-    if (queryName === '') {
+    if (query === '') {
       return toast.error('Enter the name');
     }
 
-    this.props.onSubmit(queryName);
-    this.setState({ queryName: '' });
+    this.props.onSubmit(query);
+    this.setState({ query: '' });
   };
 
   render() {
-    const { handleQueryNameSubmit, handleQueryNameChange } = this;
+    const { handleQuerySubmit, handleQueryChange } = this;
+    const { query } = this.state;
 
     return (
       <StyledHeader>
-        <form onSubmit={handleQueryNameSubmit}>
+        <form onSubmit={handleQuerySubmit}>
           <button type="submit">
             <BsSearch size="25" />
             <span>Search</span>
@@ -39,7 +40,8 @@ export class Searchbar extends Component {
 
           <input
             type="text"
-            onChange={handleQueryNameChange}
+            value={query}
+            onChange={handleQueryChange}
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
